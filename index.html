@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages with Flags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Faster continuous shine animation inside the text */
+        .center-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(90deg, transparent, white, transparent);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 2s linear infinite; /* Reduced duration to 2 seconds */
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* Animating flag buttons */
+        .language {
+            margin: 20px;
+            padding: 10px;
+            font-size: 24px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .language:hover {
+            transform: scale(1.1);
+        }
+
+        .language:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .language:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .language:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        .flag {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        button {
+            background-color: #232323;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #434343;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Text with continuous shine animation inside -->
+    <div class="center-title">al0dan</div>
+
+    <!-- Language Buttons with Flags -->
+    <div class="container">
+        <button class="language" onclick="window.location.href='chinese.html'">
+            <img src="china.png" alt="Chinese Flag" class="flag"> Chinese (中文)
+        </button>
+        <button class="language" onclick="window.location.href='arabic.html'">
+            <img src="saudi-arabia.png" alt="Arabic Flag" class="flag"> Arabic (العربية)
+        </button>
+        <button class="language" onclick="window.location.href='english.html'">
+            <img src="usa.png" alt="English Flag" class="flag"> English (English)
+        </button>
+    </div>
+</body>
+</html>
